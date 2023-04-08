@@ -49,7 +49,7 @@ const CartItem = ({ item, flag , setflag}) => {
   }, [qty, items]);
 
   return (
-    <div className="w-full h-340 flex-col justify-center p-1 px-2 rounded-lg  bg-orange-300 flex items-center border">
+    <div className="w-300 h-340 flex-col justify-center rounded-lg bg-orange-300 flex items-center border">
       <img
         src={item.imageURL}
         className="w-50 h-50 max-w-[100px] md:max-w-[150px] object-contain "

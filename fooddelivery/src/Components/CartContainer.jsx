@@ -5,12 +5,12 @@ import { motion } from "framer-motion";
 import { useStateValue } from "../Context/StateProvider";
 import { actionType } from "../Context/reducer";
 import EmptyCart from "../img/EmptyCart.svg";
-import  CartItem  from "./CartItem";
+import CartItem from "./CartItem";
 
 const CartContainer = () => {
   const [{ cartShow, cartItems, user }, dispatch] = useStateValue();
-  const [flag, setflag] = useState(1)
-  const [tot ,settot] = useState(0)
+  const [flag, setflag] = useState(1);
+  const [tot, settot] = useState(0);
 
   const showCart = () => {
     dispatch({
@@ -19,27 +19,27 @@ const CartContainer = () => {
     });
   };
 
-  useEffect(()=>{
-    let totalPrice = cartItems.reduce(function (acc, item){
+  useEffect(() => {
+    let totalPrice = cartItems.reduce(function (acc, item) {
       return acc + item.qty * item.price;
-    },0)
-    settot(totalPrice)
-  },[tot, flag])
+    }, 0);
+    settot(totalPrice);
+  }, [tot, flag]);
 
-  const clearCart =()=>{
+  const clearCart = () => {
     dispatch({
-      type : actionType.SET_CARTITEMS,
+      type: actionType.SET_CARTITEMS,
       cartItems: [],
-    })
-    localStorage.setItem('cartItems', JSON.stringify([]))
-  }
+    });
+    localStorage.setItem("cartItems", JSON.stringify([]));
+  };
 
   return (
     <motion.div
       initial={{ opacity: 0, x: 200 }}
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: 200 }}
-      className=" z-[101] w-full md:w-375 h-screen bg-white drop-shadow-md flex flex-col fixed top-0 right-0 "
+      className=" z-[101] w-full md:w-375 h-full bg-white drop-shadow-md flex flex-col fixed top-0 right-0 "
     >
       <div className="w-full flex items-start justify-between p-4 cursor-pointer">
         <motion.div whileTap={{ scale: 0.75 }}>
@@ -58,8 +58,8 @@ const CartContainer = () => {
       </div>
       {/* bottom section  */}
       {cartItems && cartItems.length > 0 ? (
-        <div className="w-full h-full  bg-orange-600 mt-2 rounded-t-[2rem] flex flex-col">
-          <div className=" w-full h-auto md:42 px-6 py-10 flex felx-col flex-wrap gap-3 overflow-y-scroll scrollbar-none">
+        <div className="w-full h-screen  bg-orange-600 mt-2 rounded-t-[2rem] flex flex-col">
+          <div className="w-full h-full md:42 px-8  py-8 pb-20 flex felx-col flex-wrap gap-2 overflow-y-scroll scrollbar-none">
             {/* cartItem  */}
             {cartItems &&
               cartItems.map((item) => (
