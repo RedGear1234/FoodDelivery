@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import product from "../img/product.gif";
 import shoppingbag from "../img/shoppingbag.png";
-import Avatar from "../img/Avatar.png";
+import avatar from "../img/avatar.png";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { MdAdd, MdLogout } from "react-icons/md";
@@ -103,7 +103,7 @@ const Header = () => {
         <div className="relative">
           <motion.img
             whileTap={{ scale: 0.6 }}
-            src={user ? user.photoURL : Avatar}
+            src={user ? user.photoURL : avatar}
             className="w-10 min-w-[40px] h-10 min-h-[40px] cursor-pointer drop-shadow-2xl ml-10 rounded-full"
             alt="userprofile"
             onClick={login}
@@ -167,7 +167,7 @@ const Header = () => {
         <div className="relative">
           <motion.img
             whileTap={{ scale: 0.6 }}
-            src={user ? user.photoURL : Avatar}
+            src={user ? user.photoURL : avatar}
             className="w-10 min-w-[40px] h-10 min-h-[40px] cursor-pointer drop-shadow-2xl ml-10 rounded-full"
             alt="userprofile"
             onClick={login}
