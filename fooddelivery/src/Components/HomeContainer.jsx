@@ -1,6 +1,6 @@
 import React from "react";
 import Delivery from "../img/delivery.png";
-import HeroBg from "../img/HeroBg.png";
+import heroBg from "../img/heroBg.png";
 import scooter from "../img/scooter.gif";
 import i1 from "../img/i1.png";
 import { motion } from "framer-motion";
@@ -45,7 +45,7 @@ const HomeContainer = () => {
 
       <div className="py-2 flex-1 relative">
         <img
-          src={HeroBg}
+          src={heroBg}
           className=" rounded-md  lg:h-550 h-420 w-full lg:w-auto ml-auto"
           alt="heroBg"
         />
